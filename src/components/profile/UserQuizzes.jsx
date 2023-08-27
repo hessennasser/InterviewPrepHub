@@ -6,10 +6,10 @@ import { FiLogIn } from "react-icons/fi";
 import { BsSendCheck } from "react-icons/bs";
 import { BiTrash } from "react-icons/bi";
 import ShareBox from '../shareBox/ShareBox';
-import { BallTriangle } from 'react-loader-spinner';
 import noQuizzes from "../../assets/images/quiz.svg"
 import DeleteQuizModal from '../modals/DeleteQuizModal';
 import { FaShare } from 'react-icons/fa';
+import LoaderInComponent from '../loaderInComponent/LoaderInComponent';
 
 const UserQuizzes = () => {
     const { uid } = useSelector((state) => state.user);
@@ -106,25 +106,14 @@ const UserQuizzes = () => {
     };
 
     return (
-        <article className='bg-white rounded-lg shadow-md w-full min-h-screen pb-8 px-3 overflow-hidden'>
+        <article className='bg-white rounded-lg shadow-md w-full md:min-h-[360px] pb-8 px-3 overflow-hidden'>
             {loading ? (
-                <div className="flex items-center justify-center h-full">
-                    <BallTriangle
-                        height={100}
-                        width={100}
-                        radius={5}
-                        color="#1c64f2"
-                        ariaLabel="ball-triangle-loading"
-                        wrapperClass={{}}
-                        wrapperStyle=""
-                        visible={true}
-                    />
-                </div>
+                <LoaderInComponent />
             ) : (
                 <>
-                    <div className="flex flex-1 items-start justify-between border-b-2 pb-2 bg-white sticky top-0 h-fit pt-8 px-8">
-                        <h2 className="text-lg md:text-2xl font-semibold leading-relaxed">Your Own Quizzes</h2>
-                        <Link to="/add-quiz" className='bg-blue-400 text-white py-2 px-5'>Add New Quiz</Link>
+                    <div className="flex items-start justify-between border-b-2 pb-2 bg-white sticky top-0 h-fit pt-8 px-8">
+                        <h2 className="text-sm sm:text-lg md:text-2xl font-semibold leading-relaxed">Your Own Quizzes</h2>
+                        <Link to="/add-quiz" className='bg-blue-400 text-white py-2 px-5 text-sm'>Add New Quiz</Link>
                     </div>
                     {userQuizzes.length === 0 ? (
                         <div className="flex flex-col gap-5 items-center justify-center">

@@ -241,14 +241,14 @@ const QuizPage = () => {
                     <h2 className="text-lg text-center">{quizData?.title}</h2>
                     <div className="flex items-center justify-between flex-col md:flex-row gap-3 border-y border-gray-500 py-2 my-3">
                         <p>
-                            Author: <span className="mx-2 font-semibold">{authorData?.username}</span>
+                            Author: <Link className="font-semibold underline text-blue-400" to={`/user/${authorData?.uid}`}>{authorData?.username}</Link>
                         </p>
                         <p>
                             Total Question Time: <span className="mx-2 font-semibold">{formattedTotalTime}</span>
                         </p>
                         <p>
                             Category:{" "}
-                            <Link to={`/category/${quizData?.category.id}`} className="mx-2 font-semibold underline">
+                            <Link to={`/category/${quizData?.category.id}`} className="mx-2 font-semibold underline text-blue-400">
                                 {categoryData?.title}
                             </Link>
                         </p>

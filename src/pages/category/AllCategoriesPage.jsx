@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { BallTriangle } from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
+import LoaderInComponent from '../../components/loaderInComponent/LoaderInComponent';
 
-const AllCategoriesPage = ({height}) => {
+const AllCategoriesPage = ({ height }) => {
     const db = getFirestore();
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -32,18 +33,7 @@ const AllCategoriesPage = ({height}) => {
             <div className="container">
                 <h2 className="text-2xl font-bold mb-4">All Categories</h2>
                 {loading ? (
-                    <div className="flex items-center justify-center h-full">
-                        <BallTriangle
-                            height={100}
-                            width={100}
-                            radius={5}
-                            color="#1c64f2"
-                            ariaLabel="ball-triangle-loading"
-                            wrapperClass={{}}
-                            wrapperStyle=""
-                            visible={true}
-                        />
-                    </div>
+                    <LoaderInComponent />
                 ) : (
                     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-5">
                         {categories.map(category => (

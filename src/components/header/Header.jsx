@@ -25,9 +25,6 @@ function Header() {
                         <li>
                             <NavLink to="/all-categories" className="">All Categories</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/add-quiz" className="">Add New Quiz</NavLink>
-                        </li>
                     </ul>
                 </div>
 
@@ -84,16 +81,15 @@ function Header() {
                     }
                 </ul>
                 <aside className={`sidebar shadow-2xl rounded-r-2xl flex md:hidden ${smallNav ? "show" : ""} z-[100000000]`}>
-                    <div className="flex flex-col gap-5 flex-1 mt-5 px-4">
-                        <NavLink to="/all-categories" className="">All Categories</NavLink>
-                        <NavLink to="/add-quiz" className="">Add New Quiz</NavLink>
+                    <div className="flex flex-col gap-5 flex-1 mt-5 ">
+                        <NavLink to="/all-categories" className=" bg-indigo-400 px-4 py-2 hover:rounded-r-2xl hover:bg-indigo-300 duration-300">All Categories</NavLink>
                     </div>
                     <div className="flex flex-col gap-4 border-t pt-2 px-4">
                         {
                             logged ?
                                 (
                                     <>
-                                        <div className="flex item-center justify-between">
+                                        <div className="flex item-center justify-center gap-2">
                                             <FaUserCircle className='text-3xl' />
                                             <h2 className='text-xl font-bold capitalize'>{name}</h2>
                                         </div>

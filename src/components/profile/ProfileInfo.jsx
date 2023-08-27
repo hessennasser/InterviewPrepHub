@@ -7,6 +7,7 @@ import { auth } from '../../firebase';
 import { updateUser } from '../../states/userSlice';
 import { toast } from 'react-toastify';
 import DataNotFounded from '../errors/DataNotFounded';
+import LoaderInComponent from '../loaderInComponent/LoaderInComponent';
 
 const ProfileInfo = () => {
     const dispatch = useDispatch();
@@ -105,20 +106,9 @@ const ProfileInfo = () => {
     };
 
     return (
-        <article className="bg-white p-8 rounded-lg shadow-md w-full  min-h-screen">
+        <article className="bg-white p-8 rounded-lg shadow-md w-full  min-h-[360px]">
             {loading ? (
-                <div className="flex items-center justify-center h-full">
-                    <BallTriangle
-                        height={100}
-                        width={100}
-                        radius={5}
-                        color="#1c64f2"
-                        ariaLabel="ball-triangle-loading"
-                        wrapperClass={{}}
-                        wrapperStyle=""
-                        visible={true}
-                    />
-                </div>
+                <LoaderInComponent />
             ) : (
 
                 <div className="grid gap-4">

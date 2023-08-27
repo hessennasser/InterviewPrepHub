@@ -11,6 +11,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { BallTriangle } from 'react-loader-spinner';
 import { FaArrowRight } from 'react-icons/fa';
+import LoaderInComponent from '../../components/loaderInComponent/LoaderInComponent';
 
 
 const AllQuizzesByCategoryPage = () => {
@@ -44,21 +45,8 @@ const AllQuizzesByCategoryPage = () => {
     }, [db]);
 
     if (loading) {
-        return <div className="flex items-center justify-center h-full">
-            <BallTriangle
-                height={100}
-                width={100}
-                radius={5}
-                color="#1c64f2"
-                ariaLabel="ball-triangle-loading"
-                wrapperClass={{}}
-                wrapperStyle=""
-                visible={true}
-            />
-        </div>
-
+        return <LoaderInComponent />
     }
-
     return (
         <section className="py-10">
             <div className="container">
@@ -94,18 +82,23 @@ const AllQuizzesByCategoryPage = () => {
                                     }}
                                     centeredSlidesBounds
                                 >
-                                    {category.quizzes.slice(0, 10).map(quiz => (
-                                        <SwiperSlide>
+                                    {category.quizzes.slice(0, 10).map(quiz => {
+                                        console.log(quiz);
+                                        return <SwiperSlide>
                                             <li key={quiz.id} className="bg-gray-100 p-4 rounded-md shadow-md grid gap-2 mx-4">
                                                 <h2 className="text-lg font-semibold mb-2 text-center">
                                                     {quiz.title.length > 20 ? `${quiz.title.slice(20)}..` : quiz.title}
                                                 </h2>
-                                                <p className='flex items-center justify-between'><b>Author: </b>{quiz.AuthorName ? quiz.AuthorName : "unknown"}</p>
+                                                <p className='flex items-center justify-between'><b>Author: </b>{quiz.AuthorName ?
+                                                    <Link to={`user/${quiz.addedBy}`} className='text-blue-400 underline'>{quiz.AuthorName}</Link>
+                                                    :
+                                                    "unknown"}</p>
                                                 <p className='flex items-center justify-between'><b>Total Questions: </b>{quiz.questions.length}</p>
                                                 <Link to={`/quizzes/${quiz.id}`} className='bg-blue-500 text-white py-2 px-5 rounded-md shadow-md w-fit mx-auto'>View Quiz</Link>
                                             </li>
                                         </SwiperSlide>
-                                    ))}
+                                    }
+                                    )}
                                 </Swiper>
                             </div>
                         );
