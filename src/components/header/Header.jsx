@@ -83,7 +83,7 @@ function Header() {
                             )
                     }
                 </ul>
-                <aside className={`sidebar shadow-2xl rounded-r-2xl flex md:hidden ${smallNav ? "show" : ""}`}>
+                <aside className={`sidebar shadow-2xl rounded-r-2xl flex md:hidden ${smallNav ? "show" : ""} z-[100000000]`}>
                     <div className="flex flex-col gap-5 flex-1 mt-5 px-4">
                         <NavLink to="/all-categories" className="">All Categories</NavLink>
                         <NavLink to="/add-quiz" className="">Add New Quiz</NavLink>

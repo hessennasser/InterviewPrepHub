@@ -10,20 +10,20 @@ const QuizResultComponent = ({ userResponses, quizData }) => {
 
                 return (
                     <div key={index} className="border p-4 rounded shadow mb-6">
-                        <h3 className="text-lg font-semibold mb-2 bg-gray-600 text-white p-4 flex items-center">
+                        <h3 className="question text-lg font-semibold mb-2 bg-gray-600 text-white p-4 flex items-center">
                             <span className="bg-blue-400 rounded-full inline-flex w-9 h-9 mr-2 items-center justify-center">
                                 {`${index + 1}`}
                             </span>
                             {question.question}
                         </h3>
-                        <ul className="list-none p-0 m-0 grid grid-cols-2 gap-5">
+                        <ul className="list-none p-0 m-0 grid md:grid-cols-2 gap-5">
                             {question.answers.map((answer) => {
                                 const isUserSelected = userResponse?.id === answer.id;
 
                                 return (
                                     <li
                                         key={answer.id}
-                                        className={`p-3 cursor-pointer rounded border flex items-center justify-between ${isUserSelected
+                                        className={`answer p-3 cursor-pointer rounded border flex items-center justify-between ${isUserSelected
                                             ? isCorrect
                                                 ? 'bg-green-200 border-green-500 hover:text-white border-2'
                                                 : 'bg-red-200 border-red-500'

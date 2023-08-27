@@ -14,7 +14,7 @@ const QuestionBlock = ({
 }) => {
     return (
         <div className="space-y-2 pb-2 border-slate-800 border-b question-block">
-            <div className="flex gap-5">
+            <div className="flex flex-col sm:flex-row gap-5">
                 <textarea
                     placeholder={`Question ${questionIndex + 1}`}
                     value={question}
@@ -30,7 +30,7 @@ const QuestionBlock = ({
                     className="p-2 border rounded"
                 />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {answers.map((answer, answerIndex) => (
                     <AnswerInput
                         key={answerIndex}

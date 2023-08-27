@@ -91,7 +91,7 @@ const CategoryQuizzesPage = () => {
                                     <p className='my-2'>
                                         {quiz.description}
                                     </p>
-                                    <div className="flex items-center justify-between py-2 border-y border-gray-500">
+                                    <div className="flex sm:items-center justify-between py-2 border-y border-gray-500 flex-col sm:flex-row gap-2">
                                         <p><b>Author</b>: {quiz.AuthorName ? quiz.AuthorName : "unknown"}</p>
                                         <p><b>Total Questions</b>: {quiz.questions.length}</p>
                                     </div>

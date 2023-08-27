@@ -277,14 +277,6 @@ const QuizPage = () => {
                     />
                 </div>
             </div>
-            <QuestionModal
-                openModal={openStartModal}
-                setOpenModal={setOpenStartModal}
-                setQuizStart={setQuizStart}
-                message={messageOnModal}
-                handleSubmit={handleSubmit}
-                to={methodOnModal}
-            />
             {/* Quiz Questions */}
             <div className="container my-10">
                 {quizStart &&
@@ -310,6 +302,14 @@ const QuizPage = () => {
                     quizData={quizData}
                 />
             )}
+            <QuestionModal
+                openModal={openStartModal}
+                setOpenModal={setOpenStartModal}
+                setQuizStart={setQuizStart}
+                message={messageOnModal}
+                handleSubmit={handleSubmit}
+                to={methodOnModal}
+            />
 
         </section>
     );

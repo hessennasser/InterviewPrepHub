@@ -32,3 +32,14 @@ aside.sidebar {
 aside.sidebar.show {
     left: 0;
 }
+
+div[role="dialog"].max-w-md.w-full.h-full.relative.p-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answer,
+.question {
+    overflow-wrap: anywhere;
+}

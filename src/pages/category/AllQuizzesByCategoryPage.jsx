@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
 import { BallTriangle } from 'react-loader-spinner';
+import { FaArrowRight } from 'react-icons/fa';
 
 
 const AllQuizzesByCategoryPage = () => {
@@ -65,11 +66,11 @@ const AllQuizzesByCategoryPage = () => {
                     if (category.quizzes.length > 0) {
                         return (
                             <div key={category.id} className="mb-8">
-                                <div className="flex items-center justify-between">
-                                    <h2 className="text-2xl font-bold">{category.title}</h2>
-                                    <Link className='text-blue-400 font-bold' to={`/category/${category.id}`}>View All Quizzes</Link>
+                                <div className="flex items-center justify-between flex-wrap gap-3">
+                                    <h2 className="md:text-2xl font-bold">{category.title}</h2>
+                                    <Link className='text-blue-400 font-bold flex items-center justify-center gap-2' to={`/category/${category.id}`}>View All Quizzes <FaArrowRight /></Link>
                                 </div>
-                                <p className="my-4 text-center">{category.description}</p>
+                                <p className="my-4 text-center font-light">{category.description}</p>
                                 <Swiper
                                     pagination={{
                                         dynamicBullets: true,
@@ -100,7 +101,7 @@ const AllQuizzesByCategoryPage = () => {
                                     {category.quizzes.map(quiz => (
                                         <SwiperSlide>
                                             <li key={quiz.id} className="bg-gray-100 p-4 rounded-md shadow-md grid gap-2">
-                                                <h2 className="text-lg font-semibold mb-2">
+                                                <h2 className="text-lg font-semibold mb-2 text-center">
                                                     {quiz.title.length > 20 ? `${quiz.title.slice(20)}..` : quiz.title}
                                                 </h2>
                                                 <p className='flex items-center justify-between'><b>Author: </b>{quiz.AuthorName ? quiz.AuthorName : "unknown"}</p>

@@ -211,20 +211,22 @@ const AddQuestionPage = () => {
                             />
                         ))}
                     </div>
-                    <button
-                        type="submit"
-                        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-                    >
-                        {loading ? <Spinner className='mx-auto' color="success" /> : "Add Quiz"}
-                    </button>
-                    <button
-                        type="button"
-                        onClick={addNewQuestion}
-                        disabled={loading}
-                        className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 mx-4"
-                    >
-                        Add New Question
-                    </button>
+                    <div className="flex items-center gap-2 flex-wrap">
+                        <button
+                            type="button"
+                            onClick={addNewQuestion}
+                            disabled={loading}
+                            className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+                        >
+                            Add New Question
+                        </button>
+                        <button
+                            type="submit"
+                            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                        >
+                            {loading ? <Spinner className='mx-auto' color="success" /> : "Submit & Save Quiz"}
+                        </button>
+                    </div>
                 </form>
             </div>
         </section>
