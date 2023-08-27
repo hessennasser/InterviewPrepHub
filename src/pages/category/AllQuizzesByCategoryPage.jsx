@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { getFirestore, collection, query, getDocs, doc, getDoc } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 
@@ -10,9 +9,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
+import { BallTriangle } from 'react-loader-spinner';
 
 
 const AllQuizzesByCategoryPage = () => {
+
     const db = getFirestore();
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -42,7 +43,19 @@ const AllQuizzesByCategoryPage = () => {
     }, [db]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className="flex items-center justify-center h-full">
+            <BallTriangle
+                height={100}
+                width={100}
+                radius={5}
+                color="#1c64f2"
+                ariaLabel="ball-triangle-loading"
+                wrapperClass={{}}
+                wrapperStyle=""
+                visible={true}
+            />
+        </div>
+
     }
 
     return (
