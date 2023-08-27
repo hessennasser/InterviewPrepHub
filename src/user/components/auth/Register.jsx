@@ -12,7 +12,7 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
-    const [position, setPosition] = useState('junior');
+    const [position, setPosition] = useState('Frontend Developer');
     const [loading, setLoading] = useState(false);
     const logged = localStorage.getItem("logged");
 

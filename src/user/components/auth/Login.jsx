@@ -40,15 +40,14 @@ const Login = () => {
             const db = getFirestore();
             const userDocRef = doc(db, 'users', user.uid);
             const userDocSnapshot = await getDoc(userDocRef);
-            let userPosition = "junior"; // Default position
+            let userPosition = "";
             let uid = null;
             if (userDocSnapshot.exists()) {
-                const userData = userDocSnapshot.data(); // Get user data from Firestore
-                userPosition = userData.position; // Use the actual position from Firestore
-                uid = userData.uid; // Get uid from Firestore
+                const userData = userDocSnapshot.data();
+                userPosition = userData.position;
+                uid = userData.uid;
                 } else {
-                // If position is not found, set it to junior in Firestore
-                await setDoc(userDocRef, { position: "junior" }, { merge: true });
+                await setDoc(userDocRef, { position: "" }, { merge: true });
             }
             console.log(uid);
             dispatch(login({
