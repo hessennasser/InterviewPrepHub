@@ -51,7 +51,7 @@ const CategoryQuizzesPage = () => {
     }, [db, categoryId]);
 
     if (loading) {
-        return <div className="min-h-[calc(100dvh-200px)] flex items-center justify-center">
+        return <div className="min-h-screen flex items-center justify-center">
             <MagnifyingGlass
                 visible={true}
                 height="160"

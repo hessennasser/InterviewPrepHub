@@ -216,7 +216,7 @@ const QuizPage = () => {
 
     if (loading) {
         return (
-            <div className="h-[calc(100dvh-200px)] flex items-center justify-center">
+            <div className="h-screen flex items-center justify-center">
                 <MagnifyingGlass
                     visible={true}
                     height="160"

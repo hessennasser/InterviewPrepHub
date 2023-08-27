@@ -105,7 +105,7 @@ const ProfileInfo = () => {
     };
 
     return (
-        <article className="bg-white p-8 rounded-lg shadow-md w-full  min-h-[360px]">
+        <article className="bg-white p-8 rounded-lg shadow-md w-full  min-h-screen">
             {loading ? (
                 <div className="flex items-center justify-center h-full">
                     <BallTriangle

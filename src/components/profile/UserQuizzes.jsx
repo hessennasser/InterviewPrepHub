@@ -106,7 +106,7 @@ const UserQuizzes = () => {
     };
 
     return (
-        <article className='bg-white rounded-lg shadow-md w-full min-h-[360px] pb-8 px-3 overflow-hidden'>
+        <article className='bg-white rounded-lg shadow-md w-full min-h-screen pb-8 px-3 overflow-hidden'>
             {loading ? (
                 <div className="flex items-center justify-center h-full">
                     <BallTriangle

@@ -81,26 +81,22 @@ const AllQuizzesByCategoryPage = () => {
                                         // when window width is >= 640px
                                         0: {
                                             slidesPerView: 1,
-                                            spaceBetween: 20,
                                         },
                                         560: {
                                             slidesPerView: 2,
-                                            spaceBetween: 20,
                                         },
                                         740: {
                                             slidesPerView: 3,
-                                            spaceBetween: 20,
                                         },
                                         960: {
                                             slidesPerView: 3,
-                                            spaceBetween: 20,
                                         },
                                     }}
                                     centeredSlidesBounds
                                 >
-                                    {category.quizzes.map(quiz => (
+                                    {category.quizzes.slice(0, 10).map(quiz => (
                                         <SwiperSlide>
-                                            <li key={quiz.id} className="bg-gray-100 p-4 rounded-md shadow-md grid gap-2">
+                                            <li key={quiz.id} className="bg-gray-100 p-4 rounded-md shadow-md grid gap-2 mx-4">
                                                 <h2 className="text-lg font-semibold mb-2 text-center">
                                                     {quiz.title.length > 20 ? `${quiz.title.slice(20)}..` : quiz.title}
                                                 </h2>
