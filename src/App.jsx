@@ -12,7 +12,7 @@ import AddQuestionPage from './user/components/questions/AddQuestionPage';
 import QuizPage from './pages/quez/QuizPage';
 import QuizResultsPage from './pages/quizResults/QuizAttemptsPage';
 import UserAttemptedQuizzes from './pages/quizResults/UserAttemptedQuizzes';
-import CategoryQuizzesPage from './pages/Category/CategoryQuizzesPage';
+import CategoryQuizzesPage from './pages/category/CategoryQuizzesPage';
 import AllCategoriesPage from './pages/category/AllCategoriesPage';
 import Footer from './components/footer/Footer';
 
