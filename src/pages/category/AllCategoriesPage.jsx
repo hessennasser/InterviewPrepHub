@@ -3,7 +3,7 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { BallTriangle } from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
 
-const AllCategoriesPage = () => {
+const AllCategoriesPage = ({height}) => {
     const db = getFirestore();
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ const AllCategoriesPage = () => {
     }, [db]);
 
     return (
-        <section className="py-10 min-h-screen">
+        <section className={`py-10 ${height}`}>
             <div className="container">
                 <h2 className="text-2xl font-bold mb-4">All Categories</h2>
                 {loading ? (

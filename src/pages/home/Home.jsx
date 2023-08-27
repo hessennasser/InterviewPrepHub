@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
             <HeroSection />
-            <AllCategoriesPage />
+            <AllCategoriesPage height={"h-fit"} />
             <AllQuizzesByCategoryPage />
         </div>
     )

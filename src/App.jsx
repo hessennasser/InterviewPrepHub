@@ -45,7 +45,7 @@ function App() {
         <Route path='/quizzes/:quizId' element={<QuizPage />} />
         <Route path='/quizzes/results/:quizId' element={<QuizResultsPage />} />
         <Route path='/user/attempts' element={<UserAttemptedQuizzes />} />
-        <Route path='/all-categories' element={<AllCategoriesPage />} />
+        <Route path='/all-categories' element={<AllCategoriesPage height={"min-h-screen"} />} />
         <Route path='/category/:categoryId' element={<CategoryQuizzesPage />} />
 
       </Routes>
