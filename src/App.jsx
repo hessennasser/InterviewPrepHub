@@ -3,7 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css'
-import Header from './components/header/header'
+import Header from './components/header/Header'
 import Register from './user/components/auth/Register'
 import Login from './user/components/auth/Login'
 import Home from './pages/home/Home'
