@@ -9,7 +9,7 @@ import Login from './user/components/auth/Login'
 import Home from './pages/home/Home'
 import Profile from './pages/profile/Profile';
 import AddQuestionPage from './user/components/questions/AddQuestionPage';
-import QuizPage from './pages/quez/QuizPage';
+import QuizPage from './pages/quiz/QuizPage';
 import QuizResultsPage from './pages/quizResults/QuizAttemptsPage';
 import UserAttemptedQuizzes from './pages/quizResults/UserAttemptedQuizzes';
 import CategoryQuizzesPage from './pages/category/CategoryQuizzesPage';
