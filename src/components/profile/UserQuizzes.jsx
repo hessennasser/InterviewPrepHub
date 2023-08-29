@@ -168,7 +168,7 @@ const UserQuizzes = () => {
                 )
             }
             {showShareBox && (
-                <ShareBox link={`http://your-website.com/quizzes/${selectedQuizId}`} message={"Share this quiz:"} buttonText={"Copy Link"} showShareBox={showShareBox} setShowShareBox={setShowShareBox} />
+                <ShareBox link={`https://interview-prep-hub-etgy.vercel.app/quizess${selectedQuizId}`} message={"Share this quiz:"} buttonText={"Copy Link"} showShareBox={showShareBox} setShowShareBox={setShowShareBox} />
             )}
         </article>
     );

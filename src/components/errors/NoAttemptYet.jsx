@@ -26,7 +26,7 @@ const NoAttemptYet = ({quizId}) => {
                 </button>
             </div>
             {showShareBox && (
-                <ShareBox link={`http://your-website.com/quizzes/${quizId}`} message={"Share this quiz:"} buttonText={"Copy Link"} showShareBox={showShareBox} setShowShareBox={setShowShareBox} />
+                <ShareBox link={`https://interview-prep-hub-etgy.vercel.app/quizzes/${quizId}`} message={"Share this quiz:"} buttonText={"Copy Link"} showShareBox={showShareBox} setShowShareBox={setShowShareBox} />
             )}
         </>
     )
