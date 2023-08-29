@@ -4,6 +4,7 @@ import { getFirestore, updateDoc, doc, getDoc } from 'firebase/firestore';
 import { FaFacebook, FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa';
 import { ImLocation } from "react-icons/im"
 import LoaderInComponent from '../loaderInComponent/LoaderInComponent';
+import { Spinner } from 'flowbite-react';
 
 const UserProfile = () => {
     const user = useSelector(state => state.user);
@@ -19,10 +20,12 @@ const UserProfile = () => {
     const [github, setGithub] = useState('');
 
     const [loading, setLoading] = useState(false);
+    const [submitting, setSubmitting] = useState(true);
 
     useEffect(() => {
         const fetchUserProfile = async () => {
-            setLoading(true)
+            setLoading(true);
+            setSubmitting(true);
             const userDocRef = doc(db, 'users', user.uid);
             const userSnapshot = await getDoc(userDocRef);
 
@@ -35,7 +38,8 @@ const UserProfile = () => {
                 setLinkedin(userData.socialMedia?.linkedin || '');
                 setGithub(userData.socialMedia?.github || '');
             }
-            setLoading(false)
+            setLoading(false);
+            setSubmitting(false);
         };
 
         fetchUserProfile();
@@ -137,7 +141,7 @@ const UserProfile = () => {
                                         className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
                                         onClick={handleSave}
                                     >
-                                        Save
+                                        {submitting ? <Spinner className='mx-auto' color="success" /> : "Save"}
                                     </button>
                                 </>
                             ) : (

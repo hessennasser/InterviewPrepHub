@@ -83,7 +83,6 @@ const AllQuizzesByCategoryPage = () => {
                                     centeredSlidesBounds
                                 >
                                     {category.quizzes.slice(0, 10).map(quiz => {
-                                        console.log(quiz);
                                         return <SwiperSlide>
                                             <li key={quiz.id} className="bg-gray-100 p-4 rounded-md shadow-md grid gap-2 mx-4">
                                                 <h2 className="text-lg font-semibold mb-2 text-center">

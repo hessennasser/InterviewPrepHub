@@ -14,13 +14,13 @@ const QuizControls = ({
     percentage,
     score
 }) => (
-    <div className={`flex items-center justify-between w-full ${quizStart ? "flex-col gap-2" : ""} flex-wrap`}>
+    <div className={`flex items-center justify-between w-full gap-3 ${quizStart ? "flex-col gap-2" : ""} flex-wrap`}>
         <span className={`font-bold text-sm md:text-lg ${quizStart && time <= 60 ? "text-red-500" : ""} text-center w-fit`}>
             Timer: {quizStart ? formattedTime : "00 : 00 : 00"}
         </span>
         {
             userSubmitted ?
-                (<div className="flex items-center justify-center flex-wrap">
+                (<div className="flex items-center md:justify-center gap-3  flex-wrap">
                     <p>Last Percentage: <span>{percentage} %</span></p>
                     <p>Your Last Score: <span>{score} / {questionsLength}</span></p>
                 </div>

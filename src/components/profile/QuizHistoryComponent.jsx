@@ -59,7 +59,7 @@ const UserResultsComponent = ({ uidForUser }) => {
                                         <tr key={result.id} className="odd:bg-gray-100 hover:bg-gray-200">
                                             <td className="border p-2">{result.quizData.title}</td>
                                             <td className="border p-2">{result.percentage}%</td>
-                                            <td className="border p-2">{result.score}</td>
+                                            <td className="border p-2">{result.score} / {result.quizData.questions.length}</td>
                                             <td className="border p-2">{result.timestamp.toDate().toLocaleString()}</td>
                                             {
                                                 (uidForUser === userId || !uidForUser) && (

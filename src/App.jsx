@@ -16,8 +16,16 @@ import CategoryQuizzesPage from './pages/category/CategoryQuizzesPage';
 import AllCategoriesPage from './pages/category/AllCategoriesPage';
 import Footer from './components/footer/Footer';
 import UserProfilePage from './pages/profile/UserProfilePage';
+import { useEffect } from 'react';
+import Cookies from 'js-cookie';
 
 function App() {
+
+  useEffect(() => {
+    if (!Cookies.get("user")) {
+      localStorage.clear();
+    }
+  }, [])
 
   return (
     <>

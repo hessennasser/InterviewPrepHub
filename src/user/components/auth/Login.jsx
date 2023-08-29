@@ -49,7 +49,6 @@ const Login = () => {
                 } else {
                 await setDoc(userDocRef, { position: "" }, { merge: true });
             }
-            console.log(uid);
             dispatch(login({
                 name: user.displayName,
                 email: user.email,
